@@ -1,0 +1,25 @@
+console.log('start')
+setTimeout(() => { 
+console.log('timer1')
+new Promise((resolve, reject)=> { 
+reject('error') 
+setTimeout(()=> { 
+console.log('timer2') 
+}) 
+resolve('success')
+}).then((data) => { 
+console.log(data) 
+}).catch((err) => { 
+console.log(err) 
+}).finally((data)=> { 
+console.log(data) 
+return 'text from finally' 
+}) 
+.then((data) => { 
+console.log(data)
+return 'text form then' 
+}).then((data) => { 
+console.log(data)
+}) 
+}, 0)
+console.log('end')
